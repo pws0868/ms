@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>main</title>
+</head>
+<body>
+    일반 고객으로 로그인시 보여지는 페이지<br>
+    idx 확인: <span th:text="${member.idx}"></span>
+    id 확인: <span th:text="${member.name}"></span>
+    타입 확인: <span th:text="${member.type}"></span><br>
+
+    <a th:href="@{/review/list(memberIdx=${member.idx})}">리뷰 페이지로</a>
+
+    <ul th:each="shop : ${shops}">
+        <li>
+            <a th:href="@{/reservation/save(shopIdx=${shop.idx}, userIdx=${member.idx})}">
+                <span th:text="${shop.name}"></span>
+            </a>
+        </li>
+    </ul>
+
+
+</body>
+</html>

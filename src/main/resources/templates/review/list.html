@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>main</title>
+</head>
+<body>
+리뷰 입장시 보이는 페이지<br>
+<div th:if="${review != null}">
+  <td th:text="${review.getMemberIdx()}"></td>
+  <td th:text="${review.getShopIdx()}"></td>
+  <td th:text="${review.getCreateDatetime()}"></td>
+  <td th:text="${review.getStatus()}"></td>
+</div>
+</body>
+</html>

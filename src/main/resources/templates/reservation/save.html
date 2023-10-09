@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>reservation</title>
+</head>
+<body>
+user가 예약버튼 눌렀을시 보여지는 페이지<br>
+<form action="/reservation/save" method="post">
+  <!-- Thymeleaf를 사용하여 값을 자동으로 삽입 -->
+  <!-- th:value는 input 요소의 값에 해당 속성 값을 설정합니다 -->
+  shopIdx: <input type="text" name="shopIdx" th:value="${param.shopIdx}"><br>
+  userIdx: <input type="text" name="memberIdx" th:value="${param.userIdx}"><br>
+  dataTime: <input type="datetime-local" name="createDatetime"><br>
+  status: <input type="radio" name="status" value="reservation" checked> 예약<br>
+
+  <input type="submit" value="예약등록">
+</form>
+</body>
+</html>

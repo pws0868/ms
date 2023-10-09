@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+  <meta charset="UTF-8">
+  <title>shopList</title>
+</head>
+<body>
+<h2>등록된 가게목록</h2>
+<table>
+  <tr>
+    <th>id</th>
+    <th>sellerName</th>
+    <th>shopName</th>
+    <th>shopInfo</th>
+    <th>상세조회</th>
+  </tr>
+
+  <tr th:each="shop: ${shopListIndex}">
+    <td th:text="${shop.id}"></td>
+    <td th:text="${shop.sellerName}"></td>
+    <td th:text="${shop.shopName}"></td>
+    <td th:text="${shop.shopInfo}"></td>
+    <td>
+      <!-- query string /member?id=1
+        rest api /member/1 -->
+      <a th:href="@{|/shop/${shop.id}|}">조회</a>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

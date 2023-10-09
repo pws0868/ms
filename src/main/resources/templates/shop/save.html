@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Partner</title>
+</head>
+<body>
+    판매자로 로그인시 보여지는 페이지<br>
+    <form action="/shop/save" method="post">
+        <!-- name 속성: 서버로 전송시 변수이름의 역할을 한다 -->
+        <!-- password 속성: 입력시 입력값을 .으로 표현해 가려준다 -->
+        가게이름: <input type="text" name="name"> <br>
+        가게위치: <input type="text" name="location"> <br>
+        가게설명: <input type="text" name="description"> <br>
+
+        <input type="submit" value="가게등록">
+        <!-- submit 버튼 클릭시 form의 값들(판매자이름,가게이름,가게정보)을 가지고 post 방식으로 /seller/save 간다 -->
+    </form>
+</body>
+</html>
